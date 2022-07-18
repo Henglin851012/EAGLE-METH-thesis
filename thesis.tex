@@ -10,8 +10,9 @@
 \newcommand*\Department中文{資訊工程學研究所}
 \newcommand*\Department英文{Institute of Computer Science and Information Engineering}
 
-\newcommand*\ThesisTitle中文{EAGLE-METH:}
-\newcommand*\ThesisTitle英文{EAGLE-METH:}
+\newcommand*\ThesisTitle中文{搜尋最適合亞硫酸氫鹽測序數據之基因組變異與胞嘧啶甲基化狀態的組合 — 基於 EAGLE 變異點評估器程式碼庫之案例研究}
+\newcommand*\ThesisTitle英文{Searching for combinations of genome variants and cytosine methylation state which best fit bisulfite sequencing data — a case study using the EAGLE variant evaluator program code base
+}
 % \newcommand*\ThesisNote中文{示例:其實徐翡曼是東京大學畢業的博士}% For real thesis omit, or use {初稿} etc.
 % \newcommand*\ThesisNote英文{Just an example.  Fei-Man actually graduated from Tokyo Univ.}% For real thesis omit, or use {draft} etc.
 
@@ -201,7 +202,7 @@ The first one is the hypothetical reference sequence, and we will use the previo
 
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=0.8]{figures/meth_set.PNG}
+  \includegraphics[scale=0.8]{figures/meth_set_v2.PNG}
   \caption{How methylation set do combination to produce the alternative sequence}
   \label{fig:meth_set}
 \end{figure}
@@ -209,13 +210,13 @@ The first one is the hypothetical reference sequence, and we will use the previo
 \vfill
 \subsection{Calculate marginal probability}
 The probability model of EAGLE-METH is based on EAGLE's calculation algorithm (see figure \ref{fig:ref} and \ref{fig:alt}), which calculates two different hypothetical sequences separately and selects the probability with higher likelihood. In EAGLE-METH, we need to take into account the different situations of the forward strand and the reverse strand. Therefore, there will be different calculation probabilities, and handle the C to T of the forward strand and the G to A of the reverse strand respectively. The original probability table based on the quality score is modified into a probability matrix that conforms to the bisulfite sequence.
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   \includegraphics[scale=0.8]{figures/ref.PNG}
   \caption{The hypothetical reference sequences calculate in EAGLE}
   \label{fig:ref}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   \includegraphics[scale=0.6]{figures/alter.PNG}
   \caption{The hypothetical alternative sequences calculate in EAGLE}
@@ -325,13 +326,13 @@ In the EAGLE-METH experiment, we used the MethylFASTQ that can flexibly simulate
 	\label{case_1}
 \end{table}
 
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   \includegraphics[scale=0.8]{figures/CHR22_70.PNG}
   \caption{Case 1 (chr22 CpG=70\%) distribution of the frequency of methylation level}
   \label{fig:case_1_1} 
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   \includegraphics[scale=0.8]{figures/CHR22_70_2.PNG}
   \caption{Case 1 (chr22 CpG=70\%) sorted of CpG' probability}
@@ -360,13 +361,13 @@ In addition, we can see that in Figure \ref{fig:case_1_1} and \ref{fig:case_1_1}
 	\label{case2}
 \end{table}
 
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   \includegraphics[scale=0.8]{figures/CHR22_30.PNG}
   \caption{Case 2 (chr22 CpG=30\%) distribution of the frequency of methylation level}
   \label{fig:case_2_1} 
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   \includegraphics[scale=0.8]{figures/CHR22_30_2.PNG}
   \caption{Case 2 (chr22 CpG=30\%) sorted of CpG' probability}
@@ -395,13 +396,13 @@ In addition, we can see that in Figure \ref{fig:case_1_1} and \ref{fig:case_1_1}
 	\label{case3}
 \end{table}
 
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   \includegraphics[scale=0.8]{figures/CHRM_70.PNG}
   \caption{Case 3 (chrM CpG=70\%) distribution of the frequency of methylation level}
   \label{fig:case_3_1} 
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   \includegraphics[scale=0.8]{figures/CHRM_70_2.PNG}
   \caption{Case 3 (chrM CpG=70\%) sorted of CpG' probability}
@@ -429,13 +430,13 @@ In addition, we can see that in Figure \ref{fig:case_1_1} and \ref{fig:case_1_1}
 	\label{case4}
 \end{table}
 
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   \includegraphics[scale=0.75]{figures/CHRM_30.PNG}
   \caption{Case 4 (chrM CpG=30\%) distribution of the frequency of methylation level}
   \label{fig:case_4_1} 
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   \includegraphics[scale=0.8]{figures/CHRM_30_2.PNG}
   \caption{Case 4 (chrM CpG=30\%) sorted of CpG' probability}
